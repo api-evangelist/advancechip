@@ -1,17 +1,45 @@
 aid: advancechip
-name: Advancechip
-description: 'Advancechip is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Advancechip Technology (Hunan) Co., Ltd.
+description: >-
+  Advancechip Technology (Hunan) Co., Ltd. — 进芯科技（湖南）股份有限公司, formerly Hunan Jinxin Electronic
+  Technology Co., Ltd. — is a fabless integrated-circuit design company founded in October 2012 and
+  headquartered in Changsha, Hunan, China. It develops digital signal processor (DSP) chips and
+  embedded solutions, and states that it has taken three DSP families to mass production: 16-bit
+  fixed-point (ADP16), 32-bit fixed-point (ADP32) and 32-bit floating-point (AVP32), alongside
+  single-core and multi-core SoC parts such as the ADM32F036 motor-control family. The company
+  describes its core technologies as DSP core design, compilation technology, large-scale SoC
+  digital integration and core drive algorithms, held as a fully independent intellectual-property
+  stack, and targets automotive electronics, thermal management, smart home and white goods, small
+  household appliances, health equipment and power tools. Its developer-facing surface is hardware,
+  not web software: evaluation and development boards (AVP32F379QP176, AVP32F00157QP80,
+  AVP32F0039QP100S, ADM32F036A5Q/A6Q/A7Q low-voltage motor boards), a technical-support page and a
+  download section that serves chip data manuals as PDFs from a third-party file host. As probed on
+  2026-09-07 Advancechip publishes no public web API, no developer portal or API reference, no
+  OpenAPI/AsyncAPI/GraphQL contract, no SDK in any public package registry, no GitHub organization
+  and no /.well-known documents; the corporate site itself is served over plaintext HTTP only.
+image: https://oss-usa.jingwxcx.com/jxdzkj/upload_files/2025/10/14/9d78c00f818c49a3a65c1ff0f8d3830e.png
 url: https://raw.githubusercontent.com/api-evangelist/advancechip/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-harvest-source-url: https://equityzen.com/company/advancechip/
+x-tier: profiled
+x-tier-reason: enriched
 specificationVersion: '0.20'
 created: '2026-09-07'
 modified: '2026-09-07'
+position: Producing
 tags:
 - Company
+- Semiconductors
+- Integrated Circuits
+- Digital Signal Processing
+- Embedded Systems
+- System On Chip
+- Automotive Electronics
+- Motor Control
+- Industrial Control
+- Hardware
+- China
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +47,57 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/advancechip-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/advancechip
+  url: http://www.advancechip.com/
+- type: WebsiteEnglish
+  url: http://en.advancechip.com/
+- type: Support
+  url: http://en.advancechip.com/technology/technology
+- type: Downloads
+  url: http://en.advancechip.com/download/download
+- type: DevelopmentTools
+  url: http://en.advancechip.com/development/development
+- type: News
+  url: http://en.advancechip.com/news/news
+- type: Careers
+  url: http://en.advancechip.com/join/job
+- type: ContactUs
+  url: http://en.advancechip.com/cont/contect
+- type: SecondaryMarket
+  url: https://equityzen.com/company/advancechip/
+- type: LLMsTxt
+  url: llms/advancechip-llms.txt
+x-enrichment:
+  date: '2026-09-07'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Advancechip is a Changsha fabless DSP chip designer whose entire developer surface is silicon and
+    hardware — its "Development tools" page lists evaluation boards and its "Download materials" page
+    serves chip data manuals as PDFs from a bare-IP file host (http://42.48.83.242:25662/), with no
+    API, no developer portal and no machine-readable contract anywhere on the domain; the only JSON
+    endpoint the site touches is its web agency's multi-tenant CMS backend at
+    jxdzkj.api.hnjwglobal.com, which is not an Advancechip product and rejects off-domain callers with
+    {"StatusCode":408,"Message":"访问域名无效"}.
+  evidence:
+  - url: http://en.advancechip.com/development/development
+    status: 200
+  - url: http://en.advancechip.com/download/download
+    status: 200
+  - url: http://www.advancechip.com/openapi.json
+    status: 404
+  - url: http://www.advancechip.com/.well-known/api-catalog
+    status: 404
+  - url: http://www.advancechip.com/llms.txt
+    status: 404
+  - url: https://jxdzkj.api.hnjwglobal.com/
+    status: 200
+  - url: https://api.github.com/users/advancechip
+    status: 404
+  checked: '2026-09-07'

@@ -1,0 +1,31 @@
+generated: '2026-09-07'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+note: >-
+  HTTPS is offered in name only. Port 443 on www.advancechip.com (180.76.137.252) answers with a
+  default placeholder certificate — subject and issuer both "C=XX, L=Default City, O=Default Company
+  Ltd", RSA 2048 / sha256WithRSAEncryption — issued 2022-01-13 and EXPIRED 2023-01-13, matching no
+  Advancechip hostname. advancechip.com and en.advancechip.com fail the TLS handshake outright
+  (SSLV3_ALERT_HANDSHAKE_FAILURE). Every page of the corporate site, including the download and
+  contact forms, is therefore served over plaintext HTTP, and robots.txt advertises both sitemaps
+  over http. No HSTS on any host. Email is better defended than the web tier: SPF is published and
+  DMARC is at p=reject, but the zone is not DNSSEC-signed and publishes no CAA record.
+hosts:
+- host: www.advancechip.com
+  https: true
+  tls_cert_error: '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate
+    (_ssl.c:1082)'
+  hsts: null
+domains:
+- domain: advancechip.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+  tls_cert_subject: C=XX, L=Default City, O=Default Company Ltd
+  tls_cert_expired: '2023-01-13'
+  probed_hosts_without_tls:
+  - advancechip.com
+  - en.advancechip.com
+checked: '2026-09-07'

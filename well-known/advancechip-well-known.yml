@@ -1,0 +1,105 @@
+generated: '2026-09-07'
+method: probed
+source: >-
+  Direct HTTP probe of every host this record knows — advancechip.com, www.advancechip.com and
+  en.advancechip.com. No baseURL or OpenAPI servers[] host exists for this company, so there is no
+  API host to probe. HTTPS is not offered on any of these hosts (TLS handshake fails), so each path
+  was probed over plaintext HTTP, which is how the site itself is served.
+note: >-
+  Every named /.well-known path 404s on every host. No WellKnown or SecurityTxt pointer is emitted
+  in apis.yml: this file records an ABSENCE, and a pointer would assert the provider serves a surface
+  it does not. The 404 bodies are the site's Nuxt 404 page (text/html) or an empty JSON literal;
+  none is a document.
+hosts:
+- host: advancechip.com
+  scheme: http
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.advancechip.com
+  scheme: http
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: en.advancechip.com
+  scheme: http
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+other_probes:
+- url: http://advancechip.com/robots.txt
+  status: 200
+  note: 'Allows everything; names two sitemaps, both over http.'
+- url: http://en.advancechip.com/sitemap.xml
+  status: 200
+  note: 'Served; enumerates marketing, product, solution and news pages only — no API or docs paths.'
+- url: http://www.advancechip.com/llms.txt
+  status: 404
+- url: http://www.advancechip.com/openapi.json
+  status: 404
+- url: http://www.advancechip.com/swagger.json
+  status: 404
+- url: http://www.advancechip.com/api-docs
+  status: 404
+- url: http://www.advancechip.com/wp-json
+  status: 404
+- url: http://www.advancechip.com/graphql
+  status: 404
+checked: '2026-09-07'
