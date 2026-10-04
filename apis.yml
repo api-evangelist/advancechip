@@ -1,5 +1,5 @@
 aid: advancechip
-name: Advancechip Technology (Hunan) Co., Ltd.
+name: Advancechip
 description: >-
   Advancechip Technology (Hunan) Co., Ltd. — 进芯科技（湖南）股份有限公司, formerly Hunan Jinxin Electronic
   Technology Co., Ltd. — is a fabless integrated-circuit design company founded in October 2012 and
@@ -113,3 +113,4 @@ x-coverage:
   - url: https://api.github.com/users/advancechip
     status: 404
   checked: '2026-09-07'
+x-legal-name: Advancechip Technology (Hunan) Co., Ltd.
